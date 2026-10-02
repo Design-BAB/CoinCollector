@@ -1,0 +1,7 @@
+-classpath 'C:\\Users\\bbece\\Documents\\Java\\GDX\\core\\build\\classes\\java\\main;C:\\Users\\bbece\\Documents\\Java\\GDX\\core\\build\\resources\\main;C:\\Users\\bbece\\.gradle\\caches\\modules-2\\files-2.1\\com.badlogicgames.gdx\\gdx\\1.14.2\\919153aed4ce12001e86c38ac3dc5cdfe1954898\\gdx-1.14.2.jar;C:\\Users\\bbece\\.gradle\\caches\\modules-2\\files-2.1\\com.badlogicgames.gdx\\gdx-jnigen-loader\\2.5.2\\f35e90affe07c46b4f5e5958a1a4c1820c4890e2\\gdx-jnigen-loader-2.5.2.jar'
+-quiet 
+-d 'C:\\Users\\bbece\\Documents\\Java\\GDX\\core\\build\\docs\\javadoc'
+-windowtitle 'core 1.0.0 API'
+-doctitle 'core 1.0.0 API'
+-notimestamp 
+'C:\\Users\\bbece\\Documents\\Java\\GDX\\core\\src\\main\\java\\com\\BryanBecerra\\Main.java'
