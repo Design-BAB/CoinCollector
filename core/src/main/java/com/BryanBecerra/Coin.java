@@ -1,25 +1,20 @@
 package com.BryanBecerra;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.Gdx;
+import java.util.Random;
 
-public class Coin {
-    private Texture texture;
-    private float x;
-    private float y;
+public class Coin extends GameObj{
     
+    private Random randomNumbers;
+
     public Coin() {
-        texture = new Texture("coin.png"); // must be in core/assets/
-        x = 300;
-        y = 300;
+        super("coin.png", 300, 300);
+        randomNumbers = new Random();
     }
     
-    public void draw (SpriteBatch batch) {
-        batch.draw(texture, x, y);
-    }
-
-    public void dispose() {
-        texture.dispose();
+    public void move() {
+        var newY = randomNumbers.nextInt((int) (700 - getBounds().width));
+        setY(newY);
+        var newX = randomNumbers.nextInt((int) (500 - getBounds().height));
+        setX(newX);
     }
 }

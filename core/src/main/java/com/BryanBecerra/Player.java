@@ -1,51 +1,39 @@
 package com.BryanBecerra;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 
-public class Player {
+public class Player extends GameObj {
 
-    private Texture texture;
-    private float x;
-    private float y;
-    private float speed = 200;
-    private int points;
-    
+    private float speed = 400;
+    public int points;
+
     public Player() {
-        texture = new Texture("fox.png"); // must be in core/assets/
-        x = 200;
-        y = 200;
+        super("fox.png", 200, 200); // initialize texture + bounds
         points = 0;
-        
     }
 
     public void update(float dt) {
+        // use the inherited bounds from GameObj
         if (Gdx.input.isKeyPressed(Input.Keys.W)) {
-            y += speed * dt;
+            setY(getY() + speed * dt);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.S)) {
-            y -= speed * dt;
+            setY(getY() - speed * dt);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.A)) {
-            x -= speed * dt;
+            setX(getX() - speed * dt);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.D)) {
-            x += speed * dt;
+            setX(getX() + speed * dt);
         }
     }
 
-    public void draw(SpriteBatch batch) {
-        batch.draw(texture, x, y);
-    }
-    
-    
-    public String getPoints() {
-        return String.valueOf(points);
+    public void addPoint() {
+        points++;
     }
 
-    public void dispose() {
-        texture.dispose();
+    public String getPoints() {
+        return String.valueOf(points);
     }
 }
