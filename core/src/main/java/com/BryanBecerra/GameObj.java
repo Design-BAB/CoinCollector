@@ -7,15 +7,18 @@ package com.BryanBecerra;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 
 public class GameObj {
     
     private Texture texture;
+    private TextureRegion region;
     private Rectangle bounds;
     
     public GameObj(String textureLocation, int x, int y) {
         texture = new Texture(textureLocation);
+        region = new TextureRegion(texture);
         //the rect that give the obj collision
         bounds = new Rectangle(x, y, texture.getWidth(), texture.getHeight());
     }
@@ -40,8 +43,20 @@ public class GameObj {
         bounds.y = newY;
     }
     
+    public float getWidth() {
+        return texture.getWidth();
+    }
+    
+    public float getHeight() {
+        return texture.getHeight();
+    }
+    
+    public void flipAround() {
+        region.flip(true, false);
+    }
+    
     public void draw (SpriteBatch batch) {
-        batch.draw(texture, bounds.x, bounds.y);
+        batch.draw(region, bounds.x, bounds.y);
     }
     
     public void dispose() {

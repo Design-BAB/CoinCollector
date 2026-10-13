@@ -15,13 +15,18 @@ public class Snail extends GameObj{
         //int y = randomer.nextInt(Main.WIN_SIZE-10);
         super("snail.png", x, y);
         xv = randomer.nextInt(2);
-        if (xv == 0) xv = -1;
+        if (xv == 0) {
+            xv = -1;
+        } else if (xv == 1){
+            flipAround();
+        }
         yv = randomer.nextInt(2);
         if (yv == 0) yv = -1;
     }
     
     public void update() {       
         if (getX() > Main.WIN_SIZE || getX() < 0) {
+            flipAround();
             xv *= -1;
         }
         if (getY() > Main.WIN_SIZE || getY() < 0) {

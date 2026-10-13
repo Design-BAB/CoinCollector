@@ -22,7 +22,6 @@ public class Main extends ApplicationAdapter {
     private GameState yourGame;
     private Random randomer;
     
-    //private StringBuilder sb = new StringBuilder();
     
     @Override
     public void create() {
