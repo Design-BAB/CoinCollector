@@ -13,17 +13,15 @@ public class Player extends GameObj {
         super("fox.png", 200, 200); // initialize texture + bounds
         points = 0;
     }
-
+    
+    
     public void update(float dt) {
         float dx = 0, dy = 0;
-        if (Gdx.input.isKeyPressed(Input.Keys.W)) {
-            if (this.getY() < Main.WIN_SIZE - this.getHeight()) {
-                dy += speed * dt;
-            }
+        if (Gdx.input.isKeyPressed(Input.Keys.W) || Gdx.input.isKeyPressed(Input.Keys.UP)) {
+            if (this.getY() < Main.WIN_SIZE - this.getHeight()) dy += speed * dt;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.S) && getY() > 0) {
-            dy -= speed * dt;
-
+        if (Gdx.input.isKeyPressed(Input.Keys.S) || Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+            if (getY() > 0) dy -= speed * dt;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.A) && getX() > 0) {
                 dx -= speed * dt;
@@ -46,6 +44,10 @@ public class Player extends GameObj {
 
     public void addPoint() {
         points++;
+    }
+    
+    public void resetPoints() {
+        points = 0;
     }
 
     public String getPoints() {

@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -21,6 +22,7 @@ public class Main extends ApplicationAdapter {
     private float timer;
     private GameState yourGame;
     private Random randomer;
+    private GameObj grass;
     
     
     @Override
@@ -30,11 +32,10 @@ public class Main extends ApplicationAdapter {
         fox = new Player();
         coin = new Coin();
         snails = new ArrayList<>();
-        var snail = new Snail(700,700);
-        snails.add(snail);
         timer = 0;
         yourGame = new GameState();
         randomer = new Random();
+        grass = new GameObj("grass.png", 0, 0);
     }
 
     @Override
@@ -64,9 +65,13 @@ public class Main extends ApplicationAdapter {
                 yourGame.isOver = true;
             }
         }
+        if (Gdx.input.isKeyPressed(Input.Keys.R)) {
+            startGame();
+        }
         //draw loop
         ScreenUtils.clear(19f/255, 171f/255, 85f/255, 1); // green background
         batch.begin();
+        grass.draw(batch);
         font.draw(batch, fox.getPoints(), 20, 50);
         fox.draw(batch);
         if (timer < TOTAL_TIME && yourGame.isOver == false) {
@@ -75,8 +80,25 @@ public class Main extends ApplicationAdapter {
                 theSnail.draw(batch);
             }
             font.draw(batch, String.valueOf(Math.round(TOTAL_TIME - timer)), 850, 850);
+        } else {
+            yourGame.isOver = true;
+            font.draw(batch, "Game Over", 400, 400);
+            font.draw(batch, "Press 'R' to play again.", 400, 500);
         }
         batch.end();
+    }
+    
+    void startGame() {
+        fox.setX(450);
+        fox.setY(450);
+        fox.resetPoints();
+        coin = new Coin();
+        timer = 0;
+        for (Snail theSnail : snails) {
+            theSnail.dispose();
+        }
+        snails.clear();
+        yourGame.isOver = false;
     }
 
     @Override
@@ -85,6 +107,7 @@ public class Main extends ApplicationAdapter {
         font.dispose();
         fox.dispose();
         coin.dispose();
+        grass.dispose();
         for (Snail theSnail : snails) {
             theSnail.dispose();
         }
