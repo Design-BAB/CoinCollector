@@ -1,38 +1,67 @@
 🦊 Fox Coin Collector
+A small 2D coin‑collecting game built with Java and libGDX.
+Guide the fox around the field, grab coins, avoid snails, and score as many points as you can before the timer hits zero.
 
-A small 2D coin-collecting game built with Java and libGDX. Guide the fox around the screen and grab as many coins as you can before the timer runs out.
+Built as a learning project while picking up libGDX and game‑loop fundamentals.
 
-Built as a learning project while picking up libGDX.
-
-How to Play
+🎮 How to Play
 Key	Action
-W	Move up
-S	Move down
+W / Up Arrow	Move up
+S / Down Arrow	Move down
 A	Move left
 D	Move right
-Touch a coin to score a point. Then another coin shows up to a random spot.
 
-Your score is displayed in the bottom-left corner.
-Built With
+
+Gameplay Rules
+Touch a coin to earn a point.
+
+Each collected coin respawns at a new random location.
+
+Every coin collected spawns a snail — avoid them.
+
+Colliding with a snail ends the game.
+
+Your score appears in the bottom‑left corner.
+
+Press R to restart after a game over.
+
+🧰 Built With
 Java
+
 libGDX (LWJGL3 desktop backend)
+
 Gradle
 
-Project Structure
+📁 Project Structure
+Code
 core/src/main/java/com/BryanBecerra/
-├── Main.java      # Game loop: update, collision checks, rendering
-├── GameObj.java   # Base class: texture + collision rectangle
-├── Player.java    # The fox: WASD movement and score
-└── Coin.java      # Collectible that respawns at random positions
+├── Main.java       # Game loop: update, collisions, rendering, reset logic
+├── GameObj.java    # Base class: texture, position, bounding box
+├── Player.java     # The fox: movement, scoring, sprite flipping
+├── Coin.java       # Collectible that respawns randomly
+└── Snail.java      # Enemy that moves and ends the game on collision
+
 core/assets/
 ├── fox.png
-└── coin.png
-Concepts Practiced
+├── coin.png
+└── grass.png
+📚 Concepts Practiced
 libGDX application lifecycle (create, render, dispose)
-Frame-rate independent movement using delta time
-Rectangle-based collision detection
-Object-oriented design (inheritance, encapsulation)
-Proper cleanup of GPU resources (Texture, SpriteBatch, BitmapFont)
-Author
 
-Bryan Becerra: GitHub
+Frame‑rate‑independent movement using delta time
+
+Rectangle‑based collision detection
+
+Randomized spawning logic
+
+Basic enemy behavior
+
+Game state management (running vs. game over)
+
+Object‑oriented design (inheritance, encapsulation)
+
+Proper cleanup of GPU resources (Texture, SpriteBatch, BitmapFont)
+
+👤 Author
+Bryan Becerra  
+GitHub: your GitHub link here
