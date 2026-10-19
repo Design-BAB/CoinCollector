@@ -1,67 +1,68 @@
-🦊 Fox Coin Collector
-A small 2D coin‑collecting game built with Java and libGDX.
-Guide the fox around the field, grab coins, avoid snails, and score as many points as you can before the timer hits zero.
+# 🦊 Fox Coin Collector
 
-Built as a learning project while picking up libGDX and game‑loop fundamentals.
+**Fox Coin Collector** is a 2D arcade game built with **Java** and **libGDX**. Play as a fox collecting coins across a grassy field while avoiding snails that appear as your score increases. Collect as many coins as possible before an enemy collision ends your run!
 
-🎮 How to Play
-Key	Action
-W / Up Arrow	Move up
-S / Down Arrow	Move down
-A	Move left
-D	Move right
+This project was developed to practice Java game development, learn the libGDX framework, and explore fundamental game programming concepts.
+
+## 🎮 Gameplay
+
+### Controls
+
+| Key | Action |
+|---|---|
+| `W` / `↑` | Move up |
+| `S` / `↓` | Move down |
+| `A` | Move left |
+| `D` | Move right |
+| `R` | Restart after game over |
+
+### Rules
+
+- **Collect coins:** Each coin collected earns one point.
+- **Watch for snails:** Every coin collected spawns a new snail, increasing the challenge as you play.
+- **Avoid collisions:** Touching a snail ends the game.
+- **Beat your score:** Your current score is displayed in the bottom-left corner.
+- **Play again:** Press `R` to restart after a game over.
+
+## 🛠️ Built With
+
+- **Java** — Game logic and object-oriented programming
+- **libGDX** — Cross-platform game development framework
+- **LWJGL3** — Desktop application backend
+- **Gradle** — Build automation and dependency management
+
+## 📂 Project Structure
+
+```text
+core/
+├── src/main/java/com/BryanBecerra/
+│   ├── Main.java       # Game loop, rendering, collisions, and game state
+│   ├── GameObj.java    # Base class for game objects and bounding boxes
+│   ├── Player.java     # Player movement, scoring, and sprite flipping
+│   ├── Coin.java       # Collectible coin and random respawning
+│   └── Snail.java      # Enemy behavior and collision handling
+│
+└── assets/
+    ├── fox.png
+    ├── coin.png
+    └── grass.png
+```
+
+## 🧠 Concepts Practiced
+
+- **libGDX application lifecycle:** Managing initialization, rendering, and resource disposal with `create()`, `render()`, and `dispose()`.
+- **Game loop fundamentals:** Updating game objects and rendering frames.
+- **Delta-time movement:** Making player movement independent of frame rate.
+- **Collision detection:** Using rectangular bounding boxes to detect interactions between game objects.
+- **Randomized spawning:** Placing collectibles at new random locations.
+- **Enemy behavior:** Introducing enemies dynamically as the player collects coins.
+- **Game state management:** Handling gameplay, game-over conditions, and restarting.
+- **Object-oriented design:** Organizing game objects through inheritance and encapsulation.
+- **Resource management:** Disposing of graphics resources such as `Texture`, `SpriteBatch`, and `BitmapFont`.
 
 
-Gameplay Rules
-Touch a coin to earn a point.
+## 👤 Author
 
-Each collected coin respawns at a new random location.
+**Bryan Becerra**
 
-Every coin collected spawns a snail — avoid them.
-
-Colliding with a snail ends the game.
-
-Your score appears in the bottom‑left corner.
-
-Press R to restart after a game over.
-
-🧰 Built With
-Java
-
-libGDX (LWJGL3 desktop backend)
-
-Gradle
-
-📁 Project Structure
-Code
-core/src/main/java/com/BryanBecerra/
-├── Main.java       # Game loop: update, collisions, rendering, reset logic
-├── GameObj.java    # Base class: texture, position, bounding box
-├── Player.java     # The fox: movement, scoring, sprite flipping
-├── Coin.java       # Collectible that respawns randomly
-└── Snail.java      # Enemy that moves and ends the game on collision
-
-core/assets/
-├── fox.png
-├── coin.png
-└── grass.png
-📚 Concepts Practiced
-libGDX application lifecycle (create, render, dispose)
-
-Frame‑rate‑independent movement using delta time
-
-Rectangle‑based collision detection
-
-Randomized spawning logic
-
-Basic enemy behavior
-
-Game state management (running vs. game over)
-
-Object‑oriented design (inheritance, encapsulation)
-
-Proper cleanup of GPU resources (Texture, SpriteBatch, BitmapFont)
-
-👤 Author
-Bryan Becerra  
-GitHub: your GitHub link here
+[GitHub Profile](https://github.com/Design-BAB)
