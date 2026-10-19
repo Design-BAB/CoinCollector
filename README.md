@@ -1,8 +1,8 @@
 # 🦊 Fox Coin Collector
 
-**Fox Coin Collector** is a 2D arcade game built with **Java** and **libGDX**. Play as a fox collecting coins across a grassy field while avoiding snails that appear as your score increases. Collect as many coins as possible before an enemy collision ends your run!
+**Fox Coin Collector** is a 2D arcade game built with Java. Play as a fox collecting coins across a grassy field while avoiding snails that appear as your score increases. Collect as many coins as possible before an enemy ends your run!
 
-This project was developed to practice Java game development, learn the libGDX framework, and explore fundamental game programming concepts.
+This project was developed to practice Java game development, and to learn the libGDX framework.
 
 ## 🎮 Gameplay
 
@@ -59,10 +59,5 @@ core/
 - **Game state management:** Handling gameplay, game-over conditions, and restarting.
 - **Object-oriented design:** Organizing game objects through inheritance and encapsulation.
 - **Resource management:** Disposing of graphics resources such as `Texture`, `SpriteBatch`, and `BitmapFont`.
-
-
-## 👤 Author
-
-**Bryan Becerra**
 
 [GitHub Profile](https://github.com/Design-BAB)
