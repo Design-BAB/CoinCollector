@@ -1,33 +1,38 @@
-# MyFirstGDX
+🦊 Fox Coin Collector
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+A small 2D coin-collecting game built with Java and libGDX. Guide the fox around the screen and grab as many coins as you can before the timer runs out.
 
-This project was generated with a template including simple application launchers and an empty `ApplicationAdapter` extension.
+Built as a learning project while picking up libGDX.
 
-## Platforms
+How to Play
+Key	Action
+W	Move up
+S	Move down
+A	Move left
+D	Move right
+Touch a coin to score a point. Then another coin shows up to a random spot.
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
+Your score is displayed in the bottom-left corner.
+Built With
+Java
+libGDX (LWJGL3 desktop backend)
+Gradle
 
-## Gradle
+Project Structure
+core/src/main/java/com/BryanBecerra/
+├── Main.java      # Game loop: update, collision checks, rendering
+├── GameObj.java   # Base class: texture + collision rectangle
+├── Player.java    # The fox: WASD movement and score
+└── Coin.java      # Collectible that respawns at random positions
+core/assets/
+├── fox.png
+└── coin.png
+Concepts Practiced
+libGDX application lifecycle (create, render, dispose)
+Frame-rate independent movement using delta time
+Rectangle-based collision detection
+Object-oriented design (inheritance, encapsulation)
+Proper cleanup of GPU resources (Texture, SpriteBatch, BitmapFont)
+Author
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
-
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
-
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+Bryan Becerra: GitHub
